@@ -33,7 +33,6 @@ public class UsuarioController {
 
     @PostMapping
     public ResponseEntity<?> crear(@Valid @RequestBody Usuario usuario, BindingResult result) {
-
         if (result.hasErrors()) {
             return validar(result);
         }
@@ -43,6 +42,7 @@ public class UsuarioController {
                     .body(Collections
                             .singletonMap("mensaje", "Ya existe un usuario con ese correo electronico!"));
         }
+        
         return ResponseEntity.status(HttpStatus.CREATED).body(service.guardar(usuario));
     }
 
@@ -88,6 +88,7 @@ public class UsuarioController {
         result.getFieldErrors().forEach(err -> {
             errores.put(err.getField(), "El campo " + err.getField() + " " + err.getDefaultMessage());
         });
+
         return ResponseEntity.badRequest().body(errores);
     }
 }

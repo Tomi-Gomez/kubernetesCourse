@@ -18,6 +18,8 @@ public class Curso {
     @NotEmpty
     private String nombre;
 
+    /* orphanRemoval -> Elimina a todos los huerfanos, serian a todos los
+    usuarios que no cuentan con id de curso*/
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "curso_id")
     private List<CursoUsuario> cursoUsuarios;

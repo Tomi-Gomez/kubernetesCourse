@@ -37,7 +37,6 @@ public class CursoController {
             return validar(result);
         }
 
-
         Curso cursoDb = service.guardar(curso);
         return ResponseEntity.status(HttpStatus.CREATED).body(cursoDb);
     }

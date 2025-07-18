@@ -1,5 +1,7 @@
 package org.aguzman.springcloud.msvc.cursos.controllers;
 
+import feign.FeignException;
+import org.aguzman.springcloud.msvc.cursos.models.Usuario;
 import org.aguzman.springcloud.msvc.cursos.models.entity.Curso;
 import org.aguzman.springcloud.msvc.cursos.services.CursoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,6 +66,55 @@ public class CursoController {
         }
         return ResponseEntity.notFound().build();
     }
+
+    @PutMapping("/asignar-usuario/{cursoId}")
+    public ResponseEntity<?> asignarUsuario(@RequestBody Usuario usuario,Long cursoId){
+        Optional<Usuario> o = Optional.empty();
+        try{
+            o = service.asignarUsuario(usuario,cursoId);
+        }catch (FeignException e){
+            ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(Collections.singletonMap("Mensaje:","No existe el usuario por el id " +
+                            "o error en la comunicacion " + e.getMessage()));
+        }
+        if (o.isPresent()){
+            return ResponseEntity.status(HttpStatus.OK).body(o.get());
+        }
+        return ResponseEntity.notFound().build();
+    }
+
+    @PostMapping("/crear-usuario/{cursoId}")
+    public ResponseEntity<?> crearUsuario(@RequestBody Usuario usuario,Long cursoId){
+        Optional<Usuario> o = Optional.empty();
+        try{
+            o = service.crearUsuario(usuario,cursoId);
+        }catch (FeignException e){
+            ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(Collections.singletonMap("Mensaje:","No existe el usuario por el id " +
+                            "o error en la comunicacion " + e.getMessage()));
+        }
+        if (o.isPresent()){
+            return ResponseEntity.status(HttpStatus.CREATED).body(o.get());
+        }
+        return ResponseEntity.notFound().build();
+    }
+
+    @DeleteMapping("/eliminar-usuario/{cursoId}")
+    public ResponseEntity<?> eliminarUsuario(@RequestBody Usuario usuario,Long cursoId){
+        Optional<Usuario> o = Optional.empty();
+        try{
+            o = service.eliminarUsuario(usuario,cursoId);
+        }catch (FeignException e){
+            ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(Collections.singletonMap("Mensaje:","No existe el usuario por el id " +
+                            "o error en la comunicacion " + e.getMessage()));
+        }
+        if (o.isPresent()){
+            return ResponseEntity.status(HttpStatus.OK).body(o.get());
+        }
+        return ResponseEntity.notFound().build();
+    }
+
 
     private ResponseEntity<Map<String, String>> validar(BindingResult result) {
         Map<String, String> errores = new HashMap<>();

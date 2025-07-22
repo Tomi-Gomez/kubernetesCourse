@@ -1,19 +1,22 @@
 package org.aguzman.springcloud.msvc.cursos.services;
 
+import feign.FeignException;
 import org.aguzman.springcloud.msvc.cursos.client.UsuarioClientRest;
 import org.aguzman.springcloud.msvc.cursos.models.Usuario;
 import org.aguzman.springcloud.msvc.cursos.models.entity.Curso;
 import org.aguzman.springcloud.msvc.cursos.models.entity.CursoUsuario;
 import org.aguzman.springcloud.msvc.cursos.repositories.CursoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public class CursoServiceImpl implements CursoService{
+public class CursoServiceImpl implements CursoService {
 
     @Autowired
     private CursoRepository repository;
@@ -68,7 +71,7 @@ public class CursoServiceImpl implements CursoService{
     @Transactional
     public Optional<Usuario> crearUsuario(Usuario usuario, Long cursoId) {
         Optional<Curso> o = repository.findById(cursoId);
-        if(o.isPresent()){
+        if (o.isPresent()) {
             Usuario usuarioNuevoMsvc = cliente.crear(usuario); // Creo un nuevo usuario
 
             Curso curso = o.get();
@@ -87,7 +90,7 @@ public class CursoServiceImpl implements CursoService{
     @Transactional
     public Optional<Usuario> eliminarUsuario(Usuario usuario, Long cursoId) {
         Optional<Curso> o = repository.findById(cursoId);
-        if(o.isPresent()){
+        if (o.isPresent()) {
             Usuario usuarioMsvc = cliente.detalle(usuario.getId());
 
             Curso curso = o.get();

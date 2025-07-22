@@ -68,8 +68,8 @@ public class CursoController {
     }
 
     @PutMapping("/asignar-usuario/{cursoId}")
-    public ResponseEntity<?> asignarUsuario(@RequestBody Usuario usuario,Long cursoId){
-        Optional<Usuario> o = Optional.empty();
+    public ResponseEntity<?> asignarUsuario(@RequestBody Usuario usuario,@PathVariable Long cursoId){
+        Optional<Usuario> o = null;
         try{
             o = service.asignarUsuario(usuario,cursoId);
         }catch (FeignException e){
@@ -84,7 +84,7 @@ public class CursoController {
     }
 
     @PostMapping("/crear-usuario/{cursoId}")
-    public ResponseEntity<?> crearUsuario(@RequestBody Usuario usuario,Long cursoId){
+    public ResponseEntity<?> crearUsuario(@RequestBody Usuario usuario,@PathVariable Long cursoId){
         Optional<Usuario> o = Optional.empty();
         try{
             o = service.crearUsuario(usuario,cursoId);
@@ -100,7 +100,7 @@ public class CursoController {
     }
 
     @DeleteMapping("/eliminar-usuario/{cursoId}")
-    public ResponseEntity<?> eliminarUsuario(@RequestBody Usuario usuario,Long cursoId){
+    public ResponseEntity<?> eliminarUsuario(@RequestBody Usuario usuario,@PathVariable Long cursoId){
         Optional<Usuario> o = Optional.empty();
         try{
             o = service.eliminarUsuario(usuario,cursoId);

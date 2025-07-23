@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
@@ -38,6 +39,12 @@ public class UsuarioServiceImpl implements UsuarioService{
     public void eliminar(Long id) {
         repository.deleteById(id);
     }
+
+    @Override
+    public List<Usuario> listarPorIds(Iterable<Long> ids) {
+        return (List<Usuario>) repository.findAllById(ids);
+    }
+
 
     @Override
     public Optional<Usuario> porEmail(String email) {

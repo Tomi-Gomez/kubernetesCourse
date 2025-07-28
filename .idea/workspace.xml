@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="901720d0-467a-4f74-a9ee-85c78f06c2cd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msvc-cursos/src/main/java/org/aguzman/springcloud/msvc/cursos/client/UsuarioClientRest.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-cursos/src/main/java/org/aguzman/springcloud/msvc/cursos/client/UsuarioClientRest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msvc-cursos/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-cursos/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msvc-usuarios/src/main/java/org/aguzman/springcloud/msvc/usuarios/client/CursoClientRest.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-usuarios/src/main/java/org/aguzman/springcloud/msvc/usuarios/client/CursoClientRest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,21 +37,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.MsvcCursosApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MsvcUsuariosApplication.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.19425288&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.MsvcCursosApplication.executor": "Run",
+    "Application.MsvcUsuariosApplication.executor": "Run",
+    "Maven.msvc-cursos [clean].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Tomas/Desktop/Tomi/curso-kubernetes/msvc-cursos",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.19425288",
+    "settings.editor.selected.configurable": "preferences.editor"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Tomas\Desktop\Tomi\curso-kubernetes\msvc-cursos" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.MsvcCursosApplication">
     <configuration name="MsvcCursosApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.aguzman.springcloud.msvc.cursos.MsvcCursosApplication" />
